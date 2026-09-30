@@ -1,12 +1,27 @@
 import streamlit as st
 import numpy as np
-import joblib
-
-# Load trained artifacts
-model = joblib.load('iris_model.pkl')
-scaler = joblib.load('iris_scaler.pkl')
+from sklearn.datasets import load_iris
+from sklearn.preprocessing import StandardScaler
+from sklearn.linear_model import LogisticRegression
 
 st.set_page_config(page_title="Iris Flower Predictor", page_icon="🌸")
+
+@st.cache_resource
+def load_and_train_model():
+    iris = load_iris()
+    X = iris.data
+    y = iris.target
+    
+    scaler = StandardScaler()
+    X_scaled = scaler.fit_transform(X)
+    
+    model = LogisticRegression(max_iter=200)
+    model.fit(X_scaled, y)
+    
+    return model, scaler, iris.target_names
+
+# Model automatically ready ho jayega
+model, scaler, target_names = load_and_train_model()
 
 st.title("🌸 Iris Flower Classification App")
 st.write("Enter feature dimensions to predict the Iris species:")
@@ -26,5 +41,5 @@ if st.button("Predict Species"):
     scaled_features = scaler.transform(features)
     pred_idx = model.predict(scaled_features)[0]
     
-    species = ['Setosa', 'Versicolor', 'Virginica']
-    st.success(f"### Predicted Species: **{species[pred_idx]}**")
+    result = target_names[pred_idx].capitalize()
+    st.success(f"### Predicted Species: **{result}**")
