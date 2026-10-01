@@ -4,10 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Project Showcase | Md Shahabuddin</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: #0f172a;
+      background: radial-gradient(circle at top, #1e293b, #0f172a);
       color: #f8fafc;
       display: flex;
       align-items: center;
@@ -15,48 +16,71 @@
       min-height: 100vh;
       margin: 0;
       padding: 20px;
+      box-sizing: border-box;
     }
     .card {
-      background: #1e293b;
-      border: 1px solid #334155;
-      border-radius: 16px;
-      padding: 35px;
-      max-width: 580px;
+      background: rgba(30, 41, 59, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 40px 30px;
+      max-width: 540px;
       text-align: center;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
     }
-    h1 { color: #38bdf8; margin-top: 0; font-size: 1.8rem; }
-    p { color: #94a3b8; line-height: 1.6; font-size: 1rem; }
     .badge {
       display: inline-block;
       background: rgba(56, 189, 248, 0.15);
       color: #38bdf8;
-      padding: 5px 14px;
-      border-radius: 20px;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      padding: 6px 16px;
+      border-radius: 9999px;
       font-size: 0.85rem;
       font-weight: 600;
-      margin-bottom: 15px;
+      letter-spacing: 0.5px;
+      margin-bottom: 20px;
+    }
+    h1 {
+      color: #f8fafc;
+      font-size: 1.8rem;
+      margin: 0 0 14px 0;
+      letter-spacing: -0.5px;
+    }
+    p {
+      color: #94a3b8;
+      line-height: 1.6;
+      font-size: 0.98rem;
+      margin: 0 0 25px 0;
     }
     .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 22px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 26px;
       background: #10b981;
-      color: white;
+      color: #ffffff !important;
       text-decoration: none;
-      border-radius: 8px;
+      border-radius: 10px;
       font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
     }
-    .btn:hover { background: #059669; }
+    .btn:hover {
+      background: #059669;
+      transform: translateY(-2px);
+    }
   </style>
 </head>
 <body>
   <div class="card">
     <span class="badge">Python / Data Science Project</span>
     <h1>Project Overview & Analysis</h1>
-    <p>This project runs computational workflows, data analysis, and predictive modeling using Python, Pandas, and Scikit-Learn.</p>
-    <p>Explore the full source code, datasets, and execution steps directly on GitHub:</p>
-    <a href="./" class="btn">View Source Code on GitHub ↗</a>
+    <p>This project executes numerical workflows, data pre-processing, and analytical modeling. Explore the complete codebase, notebooks, and dataset execution directly on GitHub.</p>
+    <a href="https://github.com/Shahabuddin107" target="_blank" rel="noreferrer" class="btn">
+      <i class="fa-brands fa-github"></i> View Full Repository ↗
+    </a>
   </div>
 </body>
 </html>
